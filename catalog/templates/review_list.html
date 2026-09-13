@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Reviews</h2>
+
+    {% for review in reviews %}
+        <section>
+            <p>{{ review.body }}</p>
+            <p>Book: {{ review.book.title }}</p>
+            <p>Publisher: {{ review.book.publisher.name }}</p>
+        </section>
+    {% empty %}
+        <p>No reviews are currently in the catalog.</p>
+    {% endfor %}
+{% endblock content %}

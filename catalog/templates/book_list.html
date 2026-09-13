@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Books</h2>
+
+    {% for book in books %}
+        <section>
+            <h3>{{ book.title }}</h3>
+            <p>Publication year: {{ book.publication_year }}</p>
+            <p>Publisher: {{ book.publisher.name }}</p>
+            <p>Number of reviews: {{ book.review_set.count }}</p>
+        </section>
+    {% empty %}
+        <p>No books are currently in the catalog.</p>
+    {% endfor %}
+{% endblock content %}
